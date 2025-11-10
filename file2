@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+
+    tools{
+      jdk 'jdk21'
+    }
+
+    stages {
+    
+      stage('Cheking') {
+
+        steps {
+
+            git branch:'main',url: 'https://github.com/br-chandan/Devops-Lab-6/'
+
+        }
+        
+      }
+
+      
+      stage('Testing') {
+
+            steps {
+                echo 'Testing'
+                sh 'java Hello.java'
+            }
+            
+      }
+      
+    }
+    
+}
