@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+
+    stages {
+    
+      stage('Cheking') {
+
+        steps {
+
+            git branch:'main',url: 'https://github.com/br-chandan/Devops-Lab-6/'
+
+        }
+        
+      }
+
+      
+      stage('Testing') {
+
+            steps {
+
+                echo 'Testing'
+            }
+            
+      }
+      
+    }
+    
+}
