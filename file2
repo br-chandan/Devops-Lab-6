@@ -26,7 +26,17 @@ pipeline {
             }
             
       }
-      
+
+        post {
+
+            success {
+                echo 'Completed Execution'
+            }
+            failure {
+                echo 'Execution  Failed'
+            }
+
+        }
     }
     
 }
