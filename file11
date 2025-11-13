@@ -1,7 +1,7 @@
 pipeline{
   agent any
   stages{
-    stage('Checking'){{
+    stage('Checking'){
       steps{
         git branch:'main' ,url 'https://github.com/br-chandan/Devops-Lab-6/'
       }
