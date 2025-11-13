@@ -1,13 +1,13 @@
 pipeline{
   agent any
   stages{
-    stage{
-      steps('Checking'){
+    stage('Checking'){{
+      steps{
         git branch:'main' ,url 'https://github.com/br-chandan/Devops-Lab-6/'
       }
     }
-    stage{
-      steps('Executing'){
+    stage('Executing'){
+      steps{
         sh 'java Hello.java'
         sh 'python3 Hello.py'
       }
