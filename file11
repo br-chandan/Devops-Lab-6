@@ -3,7 +3,7 @@ pipeline{
   stages{
     stage('Checking'){
       steps{
-        git branch:'main' ,url 'https://github.com/br-chandan/Devops-Lab-6/'
+        git branch:'main',url:'https://github.com/br-chandan/Devops-Lab-6/'
       }
     }
     stage('Executing'){
