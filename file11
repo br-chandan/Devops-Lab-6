@@ -1,16 +1,16 @@
 pipeline{
-agent any
-stages{
-stage{
-step('Checking'){
-git branch:'main' ,url 'https://github.com/br-chandan/Devops-Lab-6/'
-}
-}
-stage{
-step('Executing'){
-sh 'java Hello.java'
-sh 'python3 Hello.py'
-}
-}
-}
+  agent any
+  stages{
+    stage{
+      steps('Checking'){
+        git branch:'main' ,url 'https://github.com/br-chandan/Devops-Lab-6/'
+      }
+    }
+    stage{
+      steps('Executing'){
+        sh 'java Hello.java'
+        sh 'python3 Hello.py'
+      }
+    }
+  }
 }
