@@ -10,7 +10,7 @@ pipeline{
       steps{
         sh 'java Hello.java'
         sh 'python3 Hello.py'
-        sh 'app.js'
+        sh 'node app.js'
       }
     }
   }
