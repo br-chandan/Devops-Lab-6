@@ -1,0 +1,61 @@
+1. create a folder structure as below
+Test_Compose
+    ├── docker-compose.yml
+    ├── java_app
+    │   ├── Dockerfile
+    │   └── Test_java.java
+    ├── python_app
+        ├── Dockerfile
+        └── test_python.py
+        
+-> mkdir Test_Compose
+-> cd Test_Compose
+-> mkdir java_app python_app
+-> touch docker-compose.yml
+-> touch java_app/Dockerfile java_app/Test_java.java 
+-> touch python_app/Dockerfile python_app/test_python.py
+
+
+
+2. Enter the appropriate content/code to these files:
+->Test_Compose/java_app/Test_java.java:
+public class Test_java
+{
+        public static void main(String args[])
+        {
+                System.out.println("Hello From Java");
+        }
+}
+
+->Test_Compose/java_app/Dockerfile:
+FROM alpine/java:22-jdk
+WORKDIR <path>
+COPY Test_java.java .
+RUN javac Test_java.java
+CMD java Test_java
+
+
+->Test_Compose/python_app/test_python.py:
+print("Hello From Python")
+
+
+->Test_Compose/python_app/Dockerfile:
+FROM python:3.10-slim
+WORKDIR <path>
+COPY . .
+CMD python test_python.py
+
+
+->Test_Compose/docker-compose.yml:
+services:
+  java_app:
+    build: ./java_app
+    container_name: java_container
+  python_app:
+    build: ./python_app
+    container_name: python_container
+
+
+
+3.Execute the below command to build the java and python images and run them in different containers using docker compose
+-> docker compose up --build
