@@ -15,7 +15,6 @@ pipeline{
         echo "Hello CI/CD"
         echo "Hello Chandan"
         echo "Ganesh"
-        echo "Devops"
       }
     }
   }
