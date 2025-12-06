@@ -16,6 +16,7 @@ pipeline{
         echo "Hello Chandan"
         echo "Ganesh"
         echo "Devops"
+        exho "asdf"
       }
     }
   }
