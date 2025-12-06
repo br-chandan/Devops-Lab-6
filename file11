@@ -11,7 +11,6 @@ pipeline{
         sh 'java Hello.java'
         sh 'python3 Hello.py'
         sh 'node app.js'
-        sh 'nohup node app.js > node.log 2>&1 &'
       }
     }
   }
