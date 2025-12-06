@@ -12,6 +12,7 @@ pipeline{
         sh 'python3 Hello.py'
         sh 'node app.js'
         sh 'python3 Hello1.py'
+        echo "Hello CI/CD"
       }
     }
   }
