@@ -1,0 +1,21 @@
+pipeline{
+  agent any
+  trigger { Poll SCM ('* * * * *') }
+  stages{
+    stage('Checking'){
+      steps{
+        git branch:'main',url:'https://github.com/br-chandan/Devops-Lab-6/'
+      }
+    }
+    stage('Executing'){
+      steps{
+        sh 'java Hello.java'
+        sh 'python3 Hello.py'
+        sh 'node app.js'
+        sh 'python3 Hello1.py'
+        echo "Hello CI/CD"
+        echo "Hello Chandan"
+      }
+    }
+  }
+}
